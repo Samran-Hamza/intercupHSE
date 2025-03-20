@@ -854,73 +854,128 @@ footer {
     text-decoration: underline; /* Optional: Adds underline on hover */
 }
 
-/* --- Адаптивность --- */
-@media (max-width: 768px) {
-    /* Контейнеры */
+/* --- Адаптивные исправления --- */
+@media (max-width: 1024px) {
     .container {
-        padding: 0 15px;
+        padding: 0 20px;
     }
-
+    
     /* Главный экран */
     #hero {
         text-align: center;
         padding: 50px 0;
     }
-
     #hero h1 {
-        font-size: 3rem;
+        font-size: 4rem; /* Увеличил заголовок */
         margin-top: 50px;
     }
-
     #hero .btn {
-        width: 100%;
-        padding: 15px;
-        font-size: 16px;
+        width: auto;
+        padding: 15px 30px;
+        font-size: 18px;
     }
-
+    
     /* Навигация */
+    .hero-nav {
+        display: flex !important;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.95);
+        position: relative; /* Вернул в обычное положение */
+        padding: 15px 0;
+        width: 100%;
+        z-index: 1000;
+    }
     .hero-nav ul {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
-
-    /* Галерея */
-    .gallery-wrapper {
-        flex-direction: column;
+    .hero-nav ul li a {
+        color: black;
+        font-size: 18px;
+        text-decoration: none;
+        font-weight: bold;
     }
-
-    .gallery-img {
-        max-width: 100%;
+    .hero-nav ul li a:hover {
+        color: #007BFF;
+    }
+    
+    /* Расписание тренировок */
+    .schedule-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-container img {
+        width: 100%;
+        max-width: 500px;
         height: auto;
     }
-
-    .prev-btn, .next-btn {
-        position: static;
-        margin: 10px;
+    .schedule-grid h2 {
+        font-size: 3rem; /* Увеличил заголовок */
     }
-
+    
+    /* Галерея */
+    .gallery-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .prev-btn, .next-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 15px;
+        cursor: pointer;
+        font-size: 24px;
+        border-radius: 50%;
+    }
+    .prev-btn {
+        left: 10px;
+    }
+    .next-btn {
+        right: 10px;
+    }
+    
     /* Организаторы */
     .organizers-grid {
         grid-template-columns: 1fr;
     }
-
-    /* Карточки отзывов */
+    
+    /* Отзывы */
     .testimonial-container {
         flex-direction: column;
         align-items: center;
     }
-
     .testimonial-card {
         width: 90%;
     }
-
+    
+    /* Блок "Стать волонтером" */
+    .volunteer-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+    .text-container {
+        font-size: 22px;
+    }
+    .register-button {
+        width: auto;
+        font-size: 20px;
+        padding: 15px 25px;
+    }
+    
     /* Футер */
     footer {
         flex-direction: column;
         text-align: center;
     }
-
     .social-links {
         margin-top: 10px;
     }
