@@ -116,3 +116,10 @@ document.addEventListener("DOMContentLoaded", function () {
     updateGallery(); // Показываем стартовую картинку
 });
 
+document.addEventListener("contextmenu", (event) => event.preventDefault()); 
+document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && (event.key === "u" || event.key === "s" || event.key === "i" || event.key === "j")) {
+        event.preventDefault();
+    }
+});
+
